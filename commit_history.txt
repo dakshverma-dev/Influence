@@ -1,0 +1,1 @@
+Commit 1: 2026-05-05T15:12:03 - refactor: abstract text tokenization code in fallback API handler
