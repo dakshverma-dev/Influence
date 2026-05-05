@@ -1,2 +1,3 @@
 Commit 1: 2026-05-05T15:12:03 - refactor: abstract text tokenization code in fallback API handler
 Commit 2: 2026-05-05T17:28:15 - fix: address hydration errors on dashboard filters component
+Commit 3: 2026-05-06T04:31:12 - fix: escape html chars inside custom templates draft tool
