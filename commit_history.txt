@@ -5,3 +5,4 @@ Commit 4: 2026-05-06T09:33:19 - perf: minify svg assets inside the public direct
 Commit 5: 2026-05-06T16:23:48 - style: refine metric panel alignment on dashboard grid
 Commit 6: 2026-05-07T01:52:07 - style: enhance neon-lime visual contrast under dark mode
 Commit 7: 2026-05-07T07:04:32 - feat: add red flags detection callout in creator detailed view
+Commit 8: 2026-05-07T07:06:09 - fix: resolve react-hooks/set-state-in-effect in state provider
