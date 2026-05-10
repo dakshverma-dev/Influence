@@ -10,3 +10,4 @@ Commit 9: 2026-05-08T14:48:08 - feat: allow editing active brief category parame
 Commit 10: 2026-05-09T09:30:48 - fix: adjust budget tolerance range in scoring calculation
 Commit 11: 2026-05-09T17:42:34 - feat: add creator engagement rate telemetry charts
 Commit 12: 2026-05-10T16:25:32 - refactor: optimize token overlap matching fallback algorithm
+Commit 13: 2026-05-11T01:16:17 - style: improve card outline weights in neubrutalist homepage mode
