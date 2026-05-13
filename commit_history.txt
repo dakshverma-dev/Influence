@@ -15,3 +15,4 @@ Commit 14: 2026-05-11T21:17:29 - docs: update API payload specs in README.md
 Commit 15: 2026-05-12T13:45:20 - style: unify mobile responsive breakpoints for profile details drawer
 Commit 16: 2026-05-12T20:33:12 - style: clean up inline style definitions to use CSS variables
 Commit 17: 2026-05-13T11:14:10 - style: adjust badge sizing inside messages thread list preview
+Commit 18: 2026-05-13T17:19:33 - docs: format mathematical formulas in project specifications
