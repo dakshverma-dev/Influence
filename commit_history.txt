@@ -18,3 +18,4 @@ Commit 17: 2026-05-13T11:14:10 - style: adjust badge sizing inside messages thre
 Commit 18: 2026-05-13T17:19:33 - docs: format mathematical formulas in project specifications
 Commit 19: 2026-05-14T08:15:09 - style: update sidebar hover states to match neubrutalist theme
 Commit 20: 2026-05-15T02:10:07 - docs: clarify Groq fallback model config in README.md
+Commit 21: 2026-05-15T02:47:42 - docs: describe token matching algorithm structure
