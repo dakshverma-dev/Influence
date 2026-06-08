@@ -26,3 +26,4 @@ Commit 25: 2026-06-06T11:43:44 - feat: add active brief summary count widgets
 Commit 26: 2026-06-06T20:21:53 - style: update welcome banner font styling
 Commit 27: 2026-06-08T08:17:57 - fix: resolve ESLint warnings in layout components
 Commit 28: 2026-06-08T09:12:34 - fix: handle edge case when estCost is zero in budget fit function
+Commit 29: 2026-06-08T14:02:51 - perf: reduce rendering overhead in Framer Motion dashboard animations
