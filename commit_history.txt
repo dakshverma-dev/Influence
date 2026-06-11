@@ -29,3 +29,4 @@ Commit 28: 2026-06-08T09:12:34 - fix: handle edge case when estCost is zero in b
 Commit 29: 2026-06-08T14:02:51 - perf: reduce rendering overhead in Framer Motion dashboard animations
 Commit 30: 2026-06-09T19:26:48 - perf: debounce campaign brief range input adjustments
 Commit 31: 2026-06-10T12:52:14 - refactor: clean up unused phosphor-icons imports in routing components
+Commit 32: 2026-06-11T14:48:43 - fix: handle missing API key cases gracefully on landing page
