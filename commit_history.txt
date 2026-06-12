@@ -32,3 +32,4 @@ Commit 31: 2026-06-10T12:52:14 - refactor: clean up unused phosphor-icons import
 Commit 32: 2026-06-11T14:48:43 - fix: handle missing API key cases gracefully on landing page
 Commit 33: 2026-06-12T01:38:29 - test: add budget range helper test assertions
 Commit 34: 2026-06-12T04:10:38 - test: mock API match router response cases
+Commit 35: 2026-06-13T01:55:48 - feat: add platform filters to precision query panel
