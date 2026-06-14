@@ -37,3 +37,4 @@ Commit 36: 2026-06-13T04:37:51 - refactor: extract business logic components in 
 Commit 37: 2026-06-13T19:33:45 - fix: ensure thread IDs are fully unique on creation
 Commit 38: 2026-06-13T21:05:21 - fix: repair layout clipping of sidebar drawer on smaller viewports
 Commit 39: 2026-06-14T00:45:54 - perf: cache initial seed creators count calculations in local state
+Commit 40: 2026-06-14T21:46:19 - docs: document business model transaction split variables
