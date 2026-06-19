@@ -28,12 +28,34 @@
   --ink: var(--color-product-ink);
   --muted: var(--color-product-muted);
   --accent: var(--color-product-accent);
+  --accent-soft: rgba(204, 255, 0, 0.15);
+  --accent-strong: #b8e600;
+  --accent-contrast: #0a0a0a;
   --panel: var(--color-product-panel);
   --panel-soft: var(--color-product-panel-soft);
   --border: var(--color-product-border);
   
   --radius-panel: 16px;
   --shadow-panel: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.theme-light {
+  /* Product Mode (Light Theme override) */
+  --background: #f8f9fa;
+  --foreground: #0f172a;
+  --canvas: #f8f9fa;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.1);
+  --accent-strong: #6d28d9;
+  --accent-contrast: #ffffff;
+  --panel: #ffffff;
+  --panel-soft: #f1f5f9;
+  --border: #e2e8f0;
+  
+  --radius-panel: 16px;
+  --shadow-panel: 0 4px 12px rgba(15, 23, 42, 0.06);
 }
 
 .marketing-mode {
@@ -44,6 +66,9 @@
   --ink: var(--color-brand-ink);
   --muted: #5e597c;
   --accent: var(--color-brand-lime);
+  --accent-soft: rgba(204, 255, 0, 0.15);
+  --accent-strong: #b8e600;
+  --accent-contrast: #0a0a0a;
   --panel: var(--color-brand-surface);
   --panel-soft: rgba(255, 255, 255, 0.6);
   --border: var(--color-brand-border);

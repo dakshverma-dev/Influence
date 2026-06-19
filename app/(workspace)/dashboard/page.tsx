@@ -23,6 +23,19 @@ export default function DashboardPage() {
   const { lastMatchRun, setLastMatchRun, addOutreachThread, showToast, threads } = useAppState();
   const [loading, setLoading] = useState(false);
   const [draftingId, setDraftingId] = useState<string | null>(null);
+  const [showWelcomeBanner, setShowWelcomeBanner] = useState(true);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem("dismiss-welcome-banner");
+    if (dismissed === "true") {
+      setShowWelcomeBanner(false);
+    }
+  }, []);
+
+  const handleDismissBanner = () => {
+    setShowWelcomeBanner(false);
+    localStorage.setItem("dismiss-welcome-banner", "true");
+  };
   
   // Filters state
   const [audienceMatch, setAudienceMatch] = useState<number>(80);
@@ -175,6 +188,24 @@ export default function DashboardPage() {
           </span>
         </div>
       </div>
+
+      {/* Welcome Banner */}
+      {showWelcomeBanner && (
+        <div className="relative overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm group transition-all duration-300">
+          <img
+            src="/viray_banner.png"
+            alt="Welcome to Viray"
+            className="w-full h-auto object-cover min-h-[140px] md:min-h-0"
+          />
+          <button
+            onClick={handleDismissBanner}
+            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-xl font-bold text-white transition hover:bg-black/60 opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 leading-none"
+            aria-label="Dismiss banner"
+          >
+            &times;
+          </button>
+        </div>
+      )}
 
       {/* Main Grid Content */}
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">

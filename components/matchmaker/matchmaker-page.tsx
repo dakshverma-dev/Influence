@@ -494,7 +494,7 @@ export function MatchmakerPage() {
             </p>
             <Link
               href="/messages"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--accent)] py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[var(--accent-strong)] transition"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--accent)] py-2.5 text-xs font-bold text-[var(--accent-contrast)] shadow-sm hover:bg-[var(--accent-strong)] transition"
             >
               Open Messaging Inbox
               <ArrowRight size={14} weight="bold" />

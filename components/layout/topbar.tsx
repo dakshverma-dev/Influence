@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MagnifyingGlass, Bell, Plus, CaretDown, Check, Sparkle, ChatCircleDots } from "@phosphor-icons/react";
+import { MagnifyingGlass, Bell, Plus, CaretDown, Check, Sparkle, ChatCircleDots, Sun, Moon } from "@phosphor-icons/react";
 import { useAppState } from "@/components/providers/app-state-provider";
 
 export function Topbar() {
-  const { showToast } = useAppState();
+  const { showToast, theme, toggleTheme } = useAppState();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showAccountDropdown, setShowAccountDropdown] = useState(false);
   
@@ -51,7 +51,19 @@ export function Topbar() {
         </Link>
         
         <div className="mx-1 h-6 w-px bg-[var(--border)] hidden md:block" />
-        
+
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-[var(--muted)] transition hover:bg-[var(--canvas)] hover:text-[var(--ink)]"
+          aria-label="Toggle theme"
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {theme === "dark" ? <Sun size={20} weight="bold" /> : <Moon size={20} weight="bold" />}
+        </button>
+
+        <div className="mx-1 h-6 w-px bg-[var(--border)]" />
+
         {/* Notifications Button */}
         <div className="relative">
           <button 

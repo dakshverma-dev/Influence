@@ -35,7 +35,7 @@ export default function PaymentsPage() {
               <button
                 type="button"
                 onClick={() => showToast("Payment simulated")}
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-sm font-semibold text-white"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-sm font-semibold text-[var(--accent-contrast)]"
               >
                 Pay now
               </button>

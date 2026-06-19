@@ -4,6 +4,7 @@ import {
   createContext,
   PropsWithChildren,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -16,6 +17,8 @@ type AppStateContextValue = {
   lastMatchRun: MatchRun | null;
   threads: MessageThread[];
   toasts: ToastMessage[];
+  theme: "dark" | "light";
+  toggleTheme: () => void;
   toggleFavorite: (creatorId: string) => void;
   setLastMatchRun: (matchRun: MatchRun) => void;
   addOutreachThread: (thread: MessageThread) => void;
@@ -30,6 +33,14 @@ export function AppStateProvider({ children }: PropsWithChildren) {
   const [lastMatchRun, setLastMatchRunState] = useState<MatchRun | null>(null);
   const [threads, setThreads] = useState<MessageThread[]>(() => getSeedThreads());
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("workspace-theme") as "dark" | "light" | null;
+    if (saved) {
+      setTheme(saved);
+    }
+  }, []);
 
   const value = useMemo<AppStateContextValue>(
     () => ({
@@ -37,6 +48,14 @@ export function AppStateProvider({ children }: PropsWithChildren) {
       lastMatchRun,
       threads,
       toasts,
+      theme,
+      toggleTheme: () => {
+        setTheme((current) => {
+          const next = current === "dark" ? "light" : "dark";
+          localStorage.setItem("workspace-theme", next);
+          return next;
+        });
+      },
       toggleFavorite: (creatorId) => {
         setFavoriteIds((current) =>
           current.includes(creatorId)
@@ -63,7 +82,7 @@ export function AppStateProvider({ children }: PropsWithChildren) {
         setToasts((current) => current.filter((toast) => toast.id !== toastId));
       },
     }),
-    [favoriteIds, lastMatchRun, threads, toasts]
+    [favoriteIds, lastMatchRun, threads, toasts, theme]
   );
 
   return (
