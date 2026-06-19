@@ -48,7 +48,7 @@ export function Sidebar() {
 
       <Link
         href="/matchmaker"
-        className="mb-5 flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--accent)] text-xs font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[var(--accent-strong)]"
+        className="mb-5 flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--accent)] text-xs font-bold uppercase tracking-wider text-black shadow-sm transition hover:bg-[var(--accent-strong)]"
       >
         <Plus size={16} weight="bold" />
         New Campaign

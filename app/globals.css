@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-brand-canvas: #130f26;
-  --color-brand-ink: #ffffff;
+  --color-brand-canvas: #e4e1fb;
+  --color-brand-ink: #0a0a0a;
   --color-brand-lime: #ccff00;
   --color-brand-lime-hover: #b8e600;
-  --color-brand-surface: #1e193b;
-  --color-brand-border: rgba(255, 255, 255, 0.15);
+  --color-brand-surface: #ffffff;
+  --color-brand-border: rgba(10, 10, 10, 0.15);
 
-  --color-product-canvas: #f8f9fa;
-  --color-product-ink: #0f172a;
-  --color-product-muted: #64748b;
-  --color-product-accent: #7c3aed;
-  --color-product-border: #e2e8f0;
-  --color-product-panel: #ffffff;
-  --color-product-panel-soft: #f1f5f9;
+  --color-product-canvas: #130f26;
+  --color-product-ink: #ffffff;
+  --color-product-muted: #a5a1c2;
+  --color-product-accent: #ccff00;
+  --color-product-border: rgba(255, 255, 255, 0.12);
+  --color-product-panel: #1e193b;
+  --color-product-panel-soft: rgba(30, 25, 59, 0.5);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 :root {
-  /* Default: Product Mode */
+  /* Default: Product Mode (Dark Logo Theme) */
   --background: var(--color-product-canvas);
   --foreground: var(--color-product-ink);
   --canvas: var(--color-product-canvas);
@@ -33,22 +33,23 @@
   --border: var(--color-product-border);
   
   --radius-panel: 16px;
-  --shadow-panel: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-panel: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .marketing-mode {
+  /* Marketing Mode (Light Lavender Theme) */
   --background: var(--color-brand-canvas);
   --foreground: var(--color-brand-ink);
   --canvas: var(--color-brand-canvas);
   --ink: var(--color-brand-ink);
-  --muted: #a5a1c2;
+  --muted: #5e597c;
   --accent: var(--color-brand-lime);
   --panel: var(--color-brand-surface);
-  --panel-soft: rgba(30, 25, 59, 0.6);
+  --panel-soft: rgba(255, 255, 255, 0.6);
   --border: var(--color-brand-border);
   
   --radius-panel: 12px;
-  --shadow-panel: 4px 4px 0px var(--color-brand-lime);
+  --shadow-panel: 4px 4px 0px rgba(10, 10, 10, 1);
 }
 
 * {
@@ -114,8 +115,8 @@ textarea {
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(10,10,10,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10,10,10,0.04) 1px, transparent 1px);
 }
 
 /* Marketing Buttons */
