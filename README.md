@@ -1,10 +1,10 @@
-# 🎯 Vibely (Influence Matchmaker & Outreach Command Center)
+# Vibely (Influence Matchmaker & Outreach Command Center)
 
 Vibely is a high-performance **Influencer Matchmaking Platform & Outreach Command Center** designed for modern brand builders. It solves the fragmentation, suspect analytics, and slow manual communication loops in creator marketing by replacing them with an AI-driven, telemetry-backed matchmaking engine.
 
 ---
 
-## ⚡ Quick Start (Run Locally)
+## Quick Start (Run Locally)
 
 1. **Clone & Install Dependencies:**
    ```bash
@@ -45,7 +45,7 @@ Vibely is engineered with a modern, high-performance web stack:
 
 ---
 
-## 🧭 The Demo Walkthrough (Judges Presentation Flow)
+## The Demo Walkthrough (Judges Presentation Flow)
 
 When presenting the prototype in a round, follow this structured user journey:
 
@@ -100,16 +100,4 @@ If a creator’s follower count is high ($\ge 300\text{k}$) but their engagement
 
 ---
 
-## 🧠 Anticipated Q&A (Be Prepared for these Questions!)
 
-### Q1: What happens if the Groq API key is missing, or we hit rate limits?
-> **Answer:** Vibely is built with a fail-safe architecture. If the Groq key is absent or returns an error, the platform automatically switches to a high-speed **Fallback Token Overlap Matching algorithm**. It tokenizes the campaign parameters and creator bios, checks for intersection patterns, and calculates relevance scores client-side, ensuring the interface remains fully operational.
-
-### Q2: Why did you choose a dual-theme (Light Neubrutalist for Marketing, Dark Cockpit for Workspace)?
-> **Answer:** Marketing and product design serve different purposes. The marketing homepage uses playful Neubrutalism to capture user attention and stand out. However, Neubrutalism can cause cognitive fatigue during long sessions. Thus, the workspace dashboard transitions into a dark, distraction-free "cockpit" theme. This provides high legibility and allows users to focus on metrics, filtering, and outreach workflow.
-
-### Q3: How do you handle LLM API request bottlenecks when scoring hundreds of creators?
-> **Answer:** In a production scenario, we would use pre-computed vectors and semantic search. For this prototype, we implemented a **concurrency batch execution manager** (`runWithConcurrency` in our API route). This helper segments the creator pool into smaller batches (concurrency size of 5) and scores them in parallel, preventing request congestion and keeping API latency under 1.2 seconds.
-
-### Q4: How is the database represented in this prototype?
-> **Answer:** All schemas, mock creator statistics (with real Unsplash profile images to add premium fidelity), categories, and campaigns are typed and managed in `lib/data.ts` and `lib/constants.ts`. This acts as our localized mockup database layer, ensuring fast compilation, zero database cold-starts, and reliable performance during the live presentation.
