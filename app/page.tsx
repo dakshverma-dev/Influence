@@ -7,11 +7,11 @@ export default function HomePage() {
       <div className="absolute inset-0 bg-grid-pattern opacity-60" />
       
       {/* Floating Top Nav */}
-      <nav className="absolute left-1/2 top-6 z-50 flex w-[calc(100%-3rem)] max-w-5xl -translate-x-1/2 items-center justify-between rounded-full border-2 border-[var(--ink)] bg-white/90 px-6 py-3 shadow-[4px_4px_0px_var(--ink)] backdrop-blur-md sm:w-[calc(100%-4rem)] sm:px-8 sm:py-4">
+      <nav className="absolute left-1/2 top-6 z-50 flex w-[calc(100%-3rem)] max-w-5xl -translate-x-1/2 items-center justify-between rounded-full border-2 border-[var(--ink)] bg-[#130f26]/80 px-6 py-3 shadow-[4px_4px_0px_var(--accent)] backdrop-blur-md sm:w-[calc(100%-4rem)] sm:px-8 sm:py-4">
         <div className="flex items-center gap-2.5">
           <img
             src="/vibely_logo.png"
-            className="h-8 w-8 rounded-lg object-cover border border-black shadow-[1.5px_1.5px_0px_black]"
+            className="h-8 w-8 rounded-lg object-cover border border-[var(--ink)] shadow-[1.5px_1.5px_0px_var(--accent)]"
             alt="Vibely logo"
           />
           <span className="text-2xl font-black tracking-tight text-[var(--ink)]">Vibely.</span>
@@ -34,34 +34,36 @@ export default function HomePage() {
       <section className="relative z-10 flex min-h-[95dvh] flex-col items-center justify-center px-6 pt-32 text-center sm:pt-24">
         {/* Stickers (absolute positioned for poster effect) */}
         <div className="absolute left-[8%] top-[25%] hidden rotate-[-4deg] xl:block">
-          <div className="sticker">
+          <div className="sticker bg-white text-black border-black shadow-[3px_3px_0px_black]">
             <MagnifyingGlass size={18} weight="bold" />
             Find Real Influence
           </div>
         </div>
         <div className="absolute right-[10%] top-[40%] hidden rotate-[6deg] xl:block">
-          <div className="sticker bg-[#ffb8e0]">
+          <div className="sticker bg-[#ffb8e0] text-black border-black shadow-[3px_3px_0px_black]">
             <Funnel size={18} weight="bold" />
             Skip the noise
           </div>
         </div>
+        <div className="absolute right-[12%] top-[20%] hidden rotate-[12deg] xl:block [text-shadow:none]">
+          <div className="sticker bg-[#fff8db] text-black border-black shadow-[3px_3px_0px_black]">
+            <div className="text-left leading-none">
+              <span className="text-[10px] font-black uppercase tracking-wider text-black/50">Hello, I am</span>
+              <br />
+              <span className="text-sm font-black">Your next top creator</span>
+            </div>
+          </div>
+        </div>
 
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border-2 border-[var(--ink)] bg-[var(--accent)] px-4 py-2 text-xs font-black uppercase tracking-widest text-[var(--ink)] shadow-[2px_2px_0px_var(--ink)] sm:text-sm">
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border-2 border-[var(--ink)] bg-[var(--accent)] px-4 py-2 text-xs font-black uppercase tracking-widest text-black shadow-[2px_2px_0px_var(--ink)] sm:text-sm">
           <Sparkle size={16} weight="fill" />
           Creator Commerce, Made Magnetic
         </div>
 
         <h1 className="mx-auto max-w-5xl text-[14vw] font-black leading-[0.85] tracking-tight text-[var(--ink)] sm:text-[6.5rem] lg:text-[8.5rem]">
           BRIEF IT.<br />
-          <span className="relative inline-block text-[var(--brand-surface)] [text-shadow:-2px_-2px_0_var(--ink),2px_-2px_0_var(--ink),-2px_2px_0_var(--ink),2px_2px_0_var(--ink),6px_6px_0px_var(--ink)]">
+          <span className="relative inline-block text-[var(--brand-surface)] [text-shadow:-2px_-2px_0_var(--ink),2px_-2px_0_var(--ink),-2px_2px_0_var(--ink),2px_2px_0_var(--ink),6px_6px_0px_var(--accent)]">
             MATCH IT.
-            <div className="absolute -right-8 -top-8 hidden rotate-[12deg] sm:block">
-              <div className="sticker bg-[#fff8db] shadow-[4px_4px_0px_var(--ink)]">
-                <span className="text-[10px] font-black uppercase tracking-wider text-[var(--muted)]">Hello, I am</span>
-                <br />
-                <span className="text-base">Your next top creator</span>
-              </div>
-            </div>
           </span><br />
           SHIP IT.
         </h1>
