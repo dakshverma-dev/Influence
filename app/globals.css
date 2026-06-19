@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-canvas: #e4e1fb;
+  --color-brand-ink: #0a0a0a;
+  --color-brand-lime: #ccff00;
+  --color-brand-lime-hover: #b8e600;
+  --color-brand-surface: #ffffff;
+  --color-brand-border: rgba(10, 10, 10, 0.15);
+
+  --color-product-canvas: #f8f9fa;
+  --color-product-ink: #0f172a;
+  --color-product-muted: #64748b;
+  --color-product-accent: #7c3aed;
+  --color-product-border: #e2e8f0;
+  --color-product-panel: #ffffff;
+  --color-product-panel-soft: #f1f5f9;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Default: Product Mode */
+  --background: var(--color-product-canvas);
+  --foreground: var(--color-product-ink);
+  --canvas: var(--color-product-canvas);
+  --ink: var(--color-product-ink);
+  --muted: var(--color-product-muted);
+  --accent: var(--color-product-accent);
+  --panel: var(--color-product-panel);
+  --panel-soft: var(--color-product-panel-soft);
+  --border: var(--color-product-border);
+  
+  --radius-panel: 16px;
+  --shadow-panel: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.marketing-mode {
+  --background: var(--color-brand-canvas);
+  --foreground: var(--color-brand-ink);
+  --canvas: var(--color-brand-canvas);
+  --ink: var(--color-brand-ink);
+  --muted: #5e597c;
+  --accent: var(--color-brand-lime);
+  --panel: var(--color-brand-surface);
+  --panel-soft: rgba(255, 255, 255, 0.6);
+  --border: var(--color-brand-border);
+  
+  --radius-panel: 12px;
+  --shadow-panel: 4px 4px 0px rgba(10, 10, 10, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.18);
+}
+
+.marketing-mode ::selection {
+  background: rgba(204, 255, 0, 0.4);
+}
+
+/* Product Panel / Card styling */
+.card-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
+  box-shadow: var(--shadow-panel);
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Grid Background for Marketing */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(10,10,10,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10,10,10,0.04) 1px, transparent 1px);
+}
+
+/* Marketing Buttons */
+.btn-marketing {
+  background-color: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid var(--ink);
+  box-shadow: 2px 2px 0px var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 100ms, box-shadow 100ms;
+}
+.btn-marketing:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--ink);
+  background-color: var(--color-brand-lime-hover);
+}
+.btn-marketing:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--ink);
+}
+
+/* Marketing Floating Stickers */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--ink);
+  box-shadow: 3px 3px 0px var(--ink);
+}
+
+@keyframes pulse-sheen {
+  0% {
+    background-position: 200% 50%;
+  }
+  100% {
+    background-position: -200% 50%;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.04) 20%,
+    rgba(15, 23, 42, 0.08) 45%,
+    rgba(15, 23, 42, 0.04) 70%
+  );
+  background-size: 200% 100%;
+  animation: pulse-sheen 1.6s linear infinite;
+}
