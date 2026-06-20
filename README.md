@@ -29,7 +29,7 @@ Vibely is a high-performance **Influencer Matchmaking Platform & Outreach Comman
 
 ---
 
-## 🛠️ The Tech Stack
+##  The Tech Stack
 
 Vibely is engineered with a modern, high-performance web stack:
 
@@ -105,8 +105,8 @@ If a creator’s follower count is high ($\ge 300\text{k}$) but their engagement
 Vibely operates on a hybrid monetization model tailored for scale and transaction volume:
 
 1. **Tiered SaaS Subscription:**
-   * **Starter ($79/mo):** Up to 3 active campaigns, basic fallback token matching, standard templates.
-   * **Grow ($199/mo):** Unlimited campaigns, full Groq LLM matchmaking engine, custom outreach generators, and Recharts analytics.
+   * **Starter (₹499/mo):** Up to 3 active campaigns, basic fallback token matching, standard templates.
+   * **Grow (₹999/mo):** Unlimited campaigns, full Groq LLM matchmaking engine, custom outreach generators, and Recharts analytics.
    * **Enterprise (Custom):** Agency features, multi-seat accounts, custom API access, and white-labeling.
 2. **Transaction Take Rate (Escrow Fee):**
    * A **2.5% platform fee** on payments routed through Vibely's simulated escrow payment processor, aligning platform growth directly with creator campaign budgets.
@@ -154,7 +154,7 @@ graph TD
 
 ---
 
-## 🛡️ The Moat (Defensibility)
+## The Moat (Defensibility)
 
 Vibely's long-term defensibility is built on three key competitive advantages:
 
@@ -167,7 +167,7 @@ Vibely's long-term defensibility is built on three key competitive advantages:
 
 ---
 
-## ❓ Anticipated Q&A (Judges Cheatsheet)
+## QnA)
 
 ### Q1: How do you detect fake followers or bot audiences?
 > **Answer:** We run a deterministic telemetry function (`calculateAudienceQuality`) that compares the creator's follower count to their engagement rate. Creators with high followings ($\ge 300\text{k}$) but low engagement ($< 2\%$) are flagged as **Suspect Engagement** and penalized in their overall match rating.
