@@ -112,40 +112,7 @@ Vibely operates on a hybrid monetization model tailored for scale and transactio
    * A **2.5% platform fee** on payments routed through Vibely's simulated escrow payment processor, aligning platform growth directly with creator campaign budgets.
 3. **Outreach credit booster packs:**
    * Paid add-ons for high-volume message delivery via API channels.
-
 ---
-
-## 🏗️ Technical Architecture
-
-Vibely is designed for low latency, clean separation of concerns, and robust client/server fallbacks:
-
-```mermaid
-graph TD
-    subgraph Client Layer [Next.js Client Components]
-        UI[Workspace Theme Shell] -->|User Inputs| DB[Dashboard Cockpit]
-        DB -->|State Updates| Context[AppState Provider]
-        Context -->|Theme State| LocalS[Local Storage Cache]
-    end
-
-    subgraph API Route Layer [Next.js Serverless Routes]
-        DB -->|POST Brief| API_Match[/api/match]
-        DB -->|POST Invite| API_Outreach[/api/outreach]
-    end
-
-    subgraph Scoring & Telemetry [Server-side Engines]
-        API_Match --> Batch[Concurrency Manager]
-        Batch --> Telemetry[Deterministic Scorer]
-        Batch --> GroqGate{Groq API Key?}
-        
-        GroqGate -->|Yes| LLM[LLM Scorer: Llama-3]
-        GroqGate -->|No| Fallback[Token Overlap Fallback]
-    end
-
-    subgraph Data & Assets [Mock Database]
-        Telemetry --> Data[(lib/data & constants)]
-        Fallback --> Data
-    end
-```
 
 1. **State & Theming Engine:** A React context provider (`AppStateProvider`) manages workspace state and theme selectors, caching choices instantly in `localStorage` to avoid hydration flickering.
 2. **Telemetry Processor:** Calculates deterministic signals (audience quality, budget fits) on-the-fly to filter out suspicious creator profiles before query execution.
