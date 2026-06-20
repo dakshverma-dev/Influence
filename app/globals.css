@@ -56,6 +56,8 @@
   
   --radius-panel: 16px;
   --shadow-panel: 0 4px 12px rgba(15, 23, 42, 0.06);
+
+  color: var(--foreground);
 }
 
 .marketing-mode {
@@ -75,6 +77,8 @@
   
   --radius-panel: 12px;
   --shadow-panel: 4px 4px 0px rgba(10, 10, 10, 1);
+
+  color: var(--foreground);
 }
 
 * {
@@ -107,6 +111,18 @@ textarea {
 select option {
   background-color: var(--panel);
   color: var(--ink);
+}
+
+input,
+select,
+textarea {
+  color: var(--ink);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
 }
 
 ::selection {
