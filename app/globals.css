@@ -104,6 +104,11 @@ textarea {
     transform 160ms ease;
 }
 
+select option {
+  background-color: var(--panel);
+  color: var(--ink);
+}
+
 ::selection {
   background: rgba(124, 58, 237, 0.18);
 }

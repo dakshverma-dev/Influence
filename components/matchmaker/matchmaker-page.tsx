@@ -217,7 +217,7 @@ export function MatchmakerPage() {
                   onChange={(event) =>
                     setForm((current) => ({ ...current, category: event.target.value }))
                   }
-                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-medium outline-none focus:border-[var(--accent)] focus:bg-white"
+                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-medium outline-none focus:border-[var(--accent)]"
                   placeholder="Skincare"
                   required
                 />
@@ -233,7 +233,7 @@ export function MatchmakerPage() {
                       budgetRangeId: event.target.value as typeof current.budgetRangeId,
                     }))
                   }
-                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-semibold outline-none focus:border-[var(--accent)] focus:bg-white"
+                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-semibold outline-none focus:border-[var(--accent)]"
                 >
                   {Object.entries(budgetOptions).map(([key, option]) => (
                     <option key={key} value={key}>
@@ -254,7 +254,7 @@ export function MatchmakerPage() {
                     }))
                   }
                   rows={2}
-                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-medium outline-none focus:border-[var(--accent)] focus:bg-white"
+                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-medium outline-none focus:border-[var(--accent)]"
                   placeholder="Women 18-30 in metro cities who follow skincare routines..."
                   required
                 />
@@ -268,7 +268,7 @@ export function MatchmakerPage() {
                     setForm((current) => ({ ...current, objective: event.target.value }))
                   }
                   rows={2}
-                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-medium outline-none focus:border-[var(--accent)] focus:bg-white"
+                  className="w-full mt-1.5 rounded-lg border border-[var(--border)] bg-[var(--canvas)] px-3.5 py-2.5 text-xs font-medium outline-none focus:border-[var(--accent)]"
                   placeholder="Drive trial signups for our new sunscreen product line..."
                   required
                 />
