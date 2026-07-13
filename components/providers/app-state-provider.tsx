@@ -38,7 +38,7 @@ export function AppStateProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const saved = localStorage.getItem("workspace-theme") as "dark" | "light" | null;
     if (saved) {
-      setTheme(saved);
+      setTimeout(() => setTheme(saved), 0);
     }
   }, []);
 

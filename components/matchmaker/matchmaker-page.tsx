@@ -38,6 +38,10 @@ type OutreachApiResponse = {
   mode: "groq" | "fallback";
 };
 
+function generateThreadId(creatorId: string) {
+  return `outreach-${creatorId}-${Date.now()}`;
+}
+
 function LoadingSkeleton() {
   return (
     <div className="grid gap-4 mt-6">
@@ -153,7 +157,7 @@ export function MatchmakerPage() {
 
       const payload = (await response.json()) as OutreachApiResponse;
       const thread: MessageThread = {
-        id: `outreach-${match.creatorId}-${Date.now()}`,
+        id: generateThreadId(match.creatorId),
         creatorId: match.creatorId,
         creatorName: match.creator.name,
         handle: match.creator.handle,

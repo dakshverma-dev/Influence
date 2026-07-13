@@ -19,6 +19,10 @@ import { defaultCampaignBrief, budgetOptions } from "@/lib/constants";
 import { MatchResult, MessageThread } from "@/lib/types";
 import { formatCurrency, formatFollowers, formatPercent, titleFromBrief, getCreatorAvatar } from "@/lib/utils";
 
+function generateThreadId(creatorId: string) {
+  return `outreach-${creatorId}-${Date.now()}`;
+}
+
 export default function DashboardPage() {
   const { lastMatchRun, setLastMatchRun, addOutreachThread, showToast, threads } = useAppState();
   const [loading, setLoading] = useState(false);
@@ -28,7 +32,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const dismissed = localStorage.getItem("dismiss-welcome-banner");
     if (dismissed === "true") {
-      setShowWelcomeBanner(false);
+      setTimeout(() => setShowWelcomeBanner(false), 0);
     }
   }, []);
 
@@ -79,8 +83,11 @@ export default function DashboardPage() {
   // Run initial match run on mount if none exists
   useEffect(() => {
     if (!lastMatchRun) {
-      fetchMatches(defaultCampaignBrief);
+      setTimeout(() => {
+        fetchMatches(defaultCampaignBrief);
+      }, 0);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleUpdateBrief = (e: React.FormEvent) => {
@@ -89,11 +96,12 @@ export default function DashboardPage() {
     fetchMatches(briefForm);
   };
 
+  const matchesSource = lastMatchRun?.matches;
   // Apply filters on the matches locally
   const filteredMatches = useMemo(() => {
-    if (!lastMatchRun?.matches) return [];
+    if (!matchesSource) return [];
     
-    return lastMatchRun.matches.filter((match) => {
+    return matchesSource.filter((match) => {
       // Audience match filter (represented by brandFitScore)
       if (match.brandFitScore < audienceMatch) return false;
       
@@ -125,7 +133,7 @@ export default function DashboardPage() {
       
       return true;
     });
-  }, [lastMatchRun?.matches, audienceMatch, followerFilter, engagementFilter, categoryFilter, platformFilter]);
+  }, [matchesSource, audienceMatch, followerFilter, engagementFilter, categoryFilter, platformFilter]);
 
   const handleDraftOutreach = async (match: MatchResult) => {
     setDraftingId(match.creatorId);
@@ -142,7 +150,7 @@ export default function DashboardPage() {
       if (response.ok) {
         const payload = await response.json();
         const thread: MessageThread = {
-          id: `outreach-${match.creatorId}-${Date.now()}`,
+          id: generateThreadId(match.creatorId),
           creatorId: match.creatorId,
           creatorName: match.creator.name,
           handle: match.creator.handle,
